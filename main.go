@@ -6,28 +6,36 @@ import (
 	"strconv"
 )
 
-// type Biodata struct {
-// 	ID        int
-// 	Nama      string
-// 	Alamat    string
-// 	Pekerjaan string
-// 	Alasan    string
-// }
+type Biodata struct {
+	Nama      string
+	Alamat    string
+	Pekerjaan string
+	Alasan    string
+}
 
 func main() {
 	reader := os.Args[1]
 
-	// Biodata := make(map[int]string)
-
-	// Biodata[1]= "Nama:Evrin \n Alamat: Medan \n Pekerjaan: BackEnd Engineer \n Alasan: Pingin Pintar"
-	var Biodata = map[int]string{
-		1: " Nama:Evrin \n Alamat: Medan \n Pekerjaan: BackEnd Engineer \n Alasan: Pingin Pintar",
+	data1 := Biodata{
+		Nama:      "Evrin",
+		Alamat:    "Tarutung",
+		Pekerjaan: "Backend",
+		Alasan:    "Bekerja",
 	}
-	// fmt.Println(Biodata)
 
-	data,_ := strconv.Atoi(reader)
-	dataPeserta := Biodata[data]
+	data2 := Biodata{
+		Nama:      "Dedi Chandra",
+		Alamat:    "Balige",
+		Pekerjaan: "Backend",
+		Alasan:    "Bekerja",
+	}
 
-	fmt.Println(dataPeserta)
+
+	datas := map[int]Biodata{1: data1, 2: data2}
+
+	data, _ := strconv.Atoi(reader)
+	dataPeserta := datas[data]
+
+	fmt.Printf("Nama : %s, Alamat : %s, Pekerjaan : %s, Alasan : %s\n", dataPeserta.Nama,dataPeserta.Alamat, dataPeserta.Pekerjaan, dataPeserta.Alasan)
 
 }
