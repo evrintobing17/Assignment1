@@ -24,25 +24,50 @@ func main() {
 	}
 
 	data2 := Biodata{
-		Nama:      "Jordan",
-		Alamat:    "Medan",
-		Pekerjaan: "Human Resource",
+		Nama:      "Dedi Chandra",
+		Alamat:    "Balige",
+		Pekerjaan: "Backend Engineer",
 		Alasan:    "Mencari kehidupan yang lebih baik",
 	}
 
 	data3 := Biodata{
-		Nama:      "Maruli",
-		Alamat:    "Palembang",
-		Pekerjaan: "DevOps",
+		Nama:      "Faikar Achmad Luthfi",
+		Alamat:    "Jakarta",
+		Pekerjaan: "Backend Engineer",
 		Alasan:    "Mencari Nafkah",
 	}
 
-	datas := map[int]Biodata{1: data1, 2: data2, 3: data3}
+	data4 := Biodata{
+		Nama:      "Alvin Immanuel Simbolon",
+		Alamat:    "Medan",
+		Pekerjaan: "Backend Engineer",
+		Alasan:    "Mencari Nafkah",
+	}
+
+	data5 := Biodata{
+		Nama:      "Muhammad Ghifari",
+		Alamat:    "Jakarta",
+		Pekerjaan: "Backend Engineer",
+		Alasan:    "Mencari Nafkah",
+	}
+
+	data6 := Biodata{
+		Nama:      "Khairul Abdi Dongoran",
+		Alamat:    "Sibolga",
+		Pekerjaan: "Backend Engineer",
+		Alasan:    "Mencari Nafkah",
+	}
+
+	datas := map[int]Biodata{1: data1, 2: data2, 3: data3, 4: data4, 5: data5, 6: data6}
 
 	data, _ := strconv.Atoi(reader)
 	dataPeserta := datas[data]
 
-	result:= fmt.Sprintf("Nama : %s, Alamat : %s, Pekerjaan : %s, Alasan : %s", dataPeserta.Nama, dataPeserta.Alamat, dataPeserta.Pekerjaan, dataPeserta.Alasan)
+	Response(dataPeserta)
+}
+
+func Response(data Biodata) {
+	result := fmt.Sprintf("Nama : %s\nAlamat : %s\nPekerjaan : %s\nAlasan : %s", data.Nama, data.Alamat, data.Pekerjaan, data.Alasan)
 
 	fmt.Println(result)
 }
